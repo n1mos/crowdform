@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import TextInput from '../Components/TextInput';
+import Button from '../Components/Button';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -13,6 +14,10 @@ const LoginScreen = () => {
   const onChangePassword = newText => {
     setPassword(newText);
   };
+
+  const onLoginPress = () => {
+
+  }
 
   return (
     <View style={styles.container}>
@@ -30,6 +35,7 @@ const LoginScreen = () => {
         placeholder={'Minimum 8 characters'}
         secureTextEntry={true}
       />
+      <Button title={'Login'} onPress={onLoginPress} />
     </View>
   );
 };
