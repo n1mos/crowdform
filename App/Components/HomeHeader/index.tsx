@@ -1,5 +1,6 @@
 import React from 'react';
 import {View,Text, StyleSheet} from 'react-native';
+import FundsList from '../FundsList';
 
 const HomeHeader = () => {
   const mocked = {
@@ -25,6 +26,8 @@ const HomeHeader = () => {
         <Text style={styles.returnsText}>{mocked.returns}</Text>
         <Text style={styles.rewardsText}>Earn Rewards</Text>
       </View>
+
+      <FundsList />
     </>
   );
 };
