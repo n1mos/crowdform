@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import HomeHeader from '../Components/HomeHeader';
+import TipsBanner from '../Components/TipsBanner';
 
 const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <HomeHeader />
+
+      <TipsBanner />
     </View>
   );
 };
