@@ -4,7 +4,7 @@ import {TouchableOpacity, Text, StyleSheet} from 'react-native';
 interface ButtonProps {
   title: string;
   onPress(): void;
-  disabled: boolean;
+  disabled?: boolean;
 }
 
 const Button = ({title, onPress, disabled}: ButtonProps) => {
