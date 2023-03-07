@@ -4,6 +4,7 @@ import {DefaultTheme, NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {store} from './App/Store/store';
 import {Provider} from 'react-redux';
+import HomeScreen from './App/Screens/HomeScreen';
 import LoginScreen from './App/Screens/LoginScreen';
 import SignupScreen from './App/Screens/SignupScreen';
 
@@ -27,6 +28,7 @@ function App() {
           }}>
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Signup" component={SignupScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

@@ -27,7 +27,7 @@ const LoginScreen = () => {
   };
 
   const onLoginPress = () => {
-    console.log('a');
+    navigation.navigate('Home');
   };
 
   const onSignupPress = () => {
