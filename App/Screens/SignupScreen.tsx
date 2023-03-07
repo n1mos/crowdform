@@ -30,7 +30,7 @@ const LoginScreen = () => {
   };
 
   const onChangeLastName = newText => {
-    setFirstName(newText);
+    setLastName(newText);
   };
 
   const onChangeEmail = newText => {
@@ -77,9 +77,14 @@ const LoginScreen = () => {
       <CheckBox value={isSelected} onValueChange={handleToggleCheckbox} />
       <Text style={styles.checkboxText}>
         I am over 18 years of age and I have read and agree to the{' '}
-        <Text style={styles.checkboxLabel}>Terms of Service</Text> and <Text style={styles.checkboxLabel}>Privacy Policy</Text>
+        <Text style={styles.checkboxLabel}>Terms of Service</Text> and{' '}
+        <Text style={styles.checkboxLabel}>Privacy Policy</Text>
       </Text>
-      <Button title={'Create account'} onPress={onLoginPress} />
+      <Button
+        title={'Create account'}
+        onPress={onLoginPress}
+        disabled={!isSelected}
+      />
       <LabelButton TextComponent={TextComponent} onPress={onLoginPress} />
     </ScrollView>
   );
