@@ -4,11 +4,20 @@ import {View, TextInput as TextInputRN, Text, StyleSheet} from 'react-native';
 interface InputProps {
   label: string;
   value: string;
+  inputMode?: enum;
   onChangeText: (text: string) => void;
   placeholder?: string;
+  secureTextEntry?: boolean
 }
 
-const TextInput = ({label, value, onChangeText, placeholder}: InputProps) => {
+const TextInput = ({
+  label,
+  value,
+  onChangeText,
+  inputMode,
+  placeholder,
+  secureTextEntry,
+}: InputProps) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{label}</Text>
@@ -18,6 +27,8 @@ const TextInput = ({label, value, onChangeText, placeholder}: InputProps) => {
         onChangeText={onChangeText}
         placeholder={placeholder}
         placeholderTextColor="#777"
+        inputMode={inputMode}
+        secureTextEntry={secureTextEntry}
       />
     </View>
   );
