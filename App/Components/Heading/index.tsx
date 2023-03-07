@@ -1,11 +1,11 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
 
-interface ButtonProps {
+interface HeadingProps {
   title: string;
 }
 
-const Button = ({title}: ButtonProps) => {
+const Heading = ({title}: HeadingProps) => {
   return <Text style={styles.text}>{title}</Text>;
 };
 
@@ -19,4 +19,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Button;
+export default Heading;
