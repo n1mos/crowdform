@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Text, StyleSheet, ScrollView} from 'react-native';
+import {Text, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 import TextInput from '../Components/TextInput';
 import Button from '../Components/Button';
@@ -46,47 +46,49 @@ const LoginScreen = () => {
   };
 
   return (
-    <ScrollView style={styles.container}>
-      <Heading title={'Create your account'} />
-      <TextInput
-        label={'First Name'}
-        value={firstName}
-        onChangeText={onChangeFirstName}
-        placeholder={'First Name'}
-      />
-      <TextInput
-        label={'Last Name'}
-        value={lastName}
-        onChangeText={onChangeLastName}
-        placeholder={'Last Name'}
-      />
-      <TextInput
-        label={'E-mail'}
-        value={email}
-        onChangeText={onChangeEmail}
-        placeholder={'john@doe.com'}
-        inputMode={'email'}
-      />
-      <TextInput
-        label={'Password'}
-        value={password}
-        onChangeText={onChangePassword}
-        placeholder={'Minimum 8 characters'}
-        secureTextEntry={true}
-      />
-      <CheckBox value={isSelected} onValueChange={handleToggleCheckbox} />
-      <Text style={styles.checkboxText}>
-        I am over 18 years of age and I have read and agree to the{' '}
-        <Text style={styles.checkboxLabel}>Terms of Service</Text> and{' '}
-        <Text style={styles.checkboxLabel}>Privacy Policy</Text>
-      </Text>
-      <Button
-        title={'Create account'}
-        onPress={onLoginPress}
-        disabled={!isSelected}
-      />
-      <LabelButton TextComponent={TextComponent} onPress={onLoginPress} />
-    </ScrollView>
+    <SafeAreaView>
+      <ScrollView style={styles.container}>
+        <Heading title={'Create your account'} />
+        <TextInput
+          label={'First Name'}
+          value={firstName}
+          onChangeText={onChangeFirstName}
+          placeholder={'First Name'}
+        />
+        <TextInput
+          label={'Last Name'}
+          value={lastName}
+          onChangeText={onChangeLastName}
+          placeholder={'Last Name'}
+        />
+        <TextInput
+          label={'E-mail'}
+          value={email}
+          onChangeText={onChangeEmail}
+          placeholder={'john@doe.com'}
+          inputMode={'email'}
+        />
+        <TextInput
+          label={'Password'}
+          value={password}
+          onChangeText={onChangePassword}
+          placeholder={'Minimum 8 characters'}
+          secureTextEntry={true}
+        />
+        <CheckBox value={isSelected} onValueChange={handleToggleCheckbox} />
+        <Text style={styles.checkboxText}>
+          I am over 18 years of age and I have read and agree to the{' '}
+          <Text style={styles.checkboxLabel}>Terms of Service</Text> and{' '}
+          <Text style={styles.checkboxLabel}>Privacy Policy</Text>
+        </Text>
+        <Button
+          title={'Create account'}
+          onPress={onLoginPress}
+          disabled={!isSelected}
+        />
+        <LabelButton TextComponent={TextComponent} onPress={onLoginPress} />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 

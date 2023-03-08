@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import TextInput from '../Components/TextInput';
 import Button from '../Components/Button';
 import LabelButton from '../Components/LabelButton';
@@ -35,7 +35,7 @@ const LoginScreen = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Heading title={'Login'} />
       <TextInput
         label={'E-mail'}
@@ -53,7 +53,7 @@ const LoginScreen = () => {
       />
       <Button title={'Login'} onPress={onLoginPress} />
       <LabelButton TextComponent={TextComponent} onPress={onSignupPress} />
-    </View>
+    </SafeAreaView>
   );
 };
 
