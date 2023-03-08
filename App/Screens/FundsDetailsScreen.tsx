@@ -3,6 +3,7 @@ import {Text, StyleSheet, ScrollView, Dimensions, View} from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
 import FundsDetailsHeader from '../Components/FundsDetailsHeader'
 import InfoContainer from '../Components/InfoContainer'
+import FundBreakdown from '../Components/FundBreakdown'
 
 const FundsDetailsScreen = ({ route }) => {
   const { fundDetails } = route.params;
@@ -73,6 +74,8 @@ const FundsDetailsScreen = ({ route }) => {
       </View>
 
       <InfoContainer fundDetails={fundDetails} />
+      
+      <FundBreakdown fundDetails={fundDetails} />
     </ScrollView>
   );
 };
