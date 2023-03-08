@@ -35,24 +35,26 @@ const LoginScreen = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Heading title={'Login'} />
-      <TextInput
-        label={'E-mail'}
-        value={email}
-        onChangeText={onChangeEmail}
-        placeholder={'john@doe.com'}
-        inputMode={'email'}
-      />
-      <TextInput
-        label={'Password'}
-        value={password}
-        onChangeText={onChangePassword}
-        placeholder={'Minimum 8 characters'}
-        secureTextEntry={true}
-      />
-      <Button title={'Login'} onPress={onLoginPress} />
-      <LabelButton TextComponent={TextComponent} onPress={onSignupPress} />
+    <SafeAreaView>
+      <View style={styles.container}>
+        <Heading title={'Login'} />
+        <TextInput
+          label={'E-mail'}
+          value={email}
+          onChangeText={onChangeEmail}
+          placeholder={'john@doe.com'}
+          inputMode={'email'}
+        />
+        <TextInput
+          label={'Password'}
+          value={password}
+          onChangeText={onChangePassword}
+          placeholder={'Minimum 8 characters'}
+          secureTextEntry={true}
+        />
+        <Button title={'Login'} onPress={onLoginPress} />
+        <LabelButton TextComponent={TextComponent} onPress={onSignupPress} />
+      </View>
     </SafeAreaView>
   );
 };

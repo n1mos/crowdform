@@ -5,10 +5,12 @@ import TipsBanner from '../Components/TipsBanner';
 
 const LoginScreen = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <HomeHeader />
+    <SafeAreaView>
+      <View style={styles.container}>
+        <HomeHeader />
 
-      <TipsBanner />
+        <TipsBanner />
+      </View>
     </SafeAreaView>
   );
 };
