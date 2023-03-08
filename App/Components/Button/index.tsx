@@ -5,19 +5,24 @@ interface ButtonProps {
   title: string;
   onPress(): void;
   disabled?: boolean;
+  style?: object;
+  textStyle?: object;
 }
 
-const Button = ({title, onPress, disabled}: ButtonProps) => {
+const Button = ({title, onPress, disabled, style, textStyle}: ButtonProps) => {
   return (
     <TouchableOpacity
       style={[
         styles.button,
-        !disabled ? {backgroundColor: '#6a1ad4'} : {backgroundColor: '#6b1ad449'},
-    ]}
+        !disabled
+          ? { backgroundColor: '#6a1ad4' }
+          : { backgroundColor: '#6b1ad449' },
+        style,
+      ]}
       onPress={onPress}
       activeOpacity={0.8}
       disabled={disabled}>
-      <Text style={styles.buttonText}>{title}</Text>
+      <Text style={[styles.buttonText, textStyle]}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -31,6 +36,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#ffffff',
+    fontSize: 16,
     textAlign: 'center',
     fontWeight: 'normal',
   },

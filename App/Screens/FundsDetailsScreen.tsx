@@ -1,15 +1,28 @@
 import React from 'react';
-import {Text, StyleSheet, ScrollView, Dimensions, View} from 'react-native';
+import { Text, StyleSheet, ScrollView, Dimensions, View, Image } from 'react-native';
 import { LineChart } from 'react-native-chart-kit';
-import FundsDetailsHeader from '../Components/FundsDetailsHeader'
-import InfoContainer from '../Components/InfoContainer'
-import FundBreakdown from '../Components/FundBreakdown'
+import FundsDetailsHeader from '../Components/FundsDetailsHeader';
+import InfoContainer from '../Components/InfoContainer';
+import FundBreakdown from '../Components/FundBreakdown';
+import PortfolioCard from '../Components/PortfolioCard';
 
 const FundsDetailsScreen = ({ route }) => {
   const { fundDetails } = route.params;
+  const iconUp = require('../Assets/Up.png');
+
   return (
     <ScrollView style={styles.container}>
       <FundsDetailsHeader params={route.params} />
+
+      <View style={styles.valueContainer}>
+        <Text style={styles.valueText}>$18.23</Text>
+        <Text style={styles.valueText}>2022</Text>
+      </View>
+
+      <Text style={styles.returnsText}>
+        <Image source={iconUp} />
+        3.51% ($1.21)
+      </Text>
 
       <LineChart
         data={{
@@ -51,7 +64,6 @@ const FundsDetailsScreen = ({ route }) => {
         }}
         style={styles.chart}
       />
-
       <View style={styles.labels}>
         <View>
           <Text style={styles.labelsText}>1h</Text>
@@ -72,10 +84,9 @@ const FundsDetailsScreen = ({ route }) => {
           <Text style={styles.labelsText}>All</Text>
         </View>
       </View>
-
       <InfoContainer fundDetails={fundDetails} />
-      
       <FundBreakdown fundDetails={fundDetails} />
+      <PortfolioCard />
     </ScrollView>
   );
 };
@@ -103,6 +114,19 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     paddingVertical: 5,
     color: '#770FDF',
+  },
+  valueContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  valueText: {
+    color: '#000',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  returnsText: {
+    fontSize: 14,
+    color: '#0FDF8F',
   },
 });
 
