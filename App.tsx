@@ -8,6 +8,7 @@ import {Provider} from 'react-redux';
 import HomeScreen from './App/Screens/HomeScreen';
 import LoginScreen from './App/Screens/LoginScreen';
 import SignupScreen from './App/Screens/SignupScreen';
+import FundsDetailsScreen from './App/Screens/FundsDetailsScreen';
 import LoremIpsumScreen from './App/Screens/LoremIpsumScreen';
 
 const Stack = createNativeStackNavigator();
@@ -46,6 +47,7 @@ function App() {
           }}>
           <Stack.Screen name="Login" component={LoginScreen} />
           <Stack.Screen name="Signup" component={SignupScreen} />
+          <Stack.Screen name="Fund" component={FundsDetailsScreen} />
           <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>
       </NavigationContainer>
