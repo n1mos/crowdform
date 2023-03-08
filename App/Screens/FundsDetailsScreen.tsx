@@ -4,7 +4,7 @@ import { LineChart } from 'react-native-chart-kit';
 import FundsDetailsHeader from '../Components/FundsDetailsHeader'
 
 const FundsDetailsScreen = ({ route }) => {
-  console.log(route.params)
+  const { fundDetails } = route.params;
   return (
     <ScrollView style={styles.container}>
       <FundsDetailsHeader params={route.params} />
@@ -70,6 +70,41 @@ const FundsDetailsScreen = ({ route }) => {
           <Text style={styles.labelsText}>All</Text>
         </View>
       </View>
+
+      <View style={styles.infoContainer}>
+        <Text style={styles.infoTitle}>Info & Stats</Text>
+
+        <View style={styles.infoRow}>
+          <View style={styles.infoRowWrapper}>
+            <Text style={styles.infoRowTitle}>AUM</Text>
+            <Text style={styles.infoRowValue}>{fundDetails.AUM}</Text>
+          </View>
+          <View style={styles.infoRowWrapper}>
+            <Text style={styles.infoRowTitle}>Issue Date</Text>
+            <Text style={styles.infoRowValue}>{fundDetails.issueDate}</Text>
+          </View>
+        </View>
+        <View style={styles.infoRow}>
+          <View style={styles.infoRowWrapper}>
+            <Text style={styles.infoRowTitle}>Vintage Range</Text>
+            <Text style={styles.infoRowValue}>{fundDetails.vintageRange}</Text>
+          </View>
+          <View style={styles.infoRowWrapper}>
+            <Text style={styles.infoRowTitle}>TER</Text>
+            <Text style={styles.infoRowValue}>{fundDetails.TER}</Text>
+          </View>
+        </View>
+        <View style={styles.infoRow}>
+          <View style={styles.infoRowWrapper}>
+            <Text style={styles.infoRowTitle}>Price at Close</Text>
+            <Text style={styles.infoRowValue}>{fundDetails.priceAtClose}</Text>
+          </View>
+          <View style={styles.infoRowWrapper}>
+            <Text style={styles.infoRowTitle}>Price at Open</Text>
+            <Text style={styles.infoRowValue}>{fundDetails.priceAtOpen}</Text>
+          </View>
+        </View>
+      </View>
     </ScrollView>
   );
 };
@@ -82,6 +117,29 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     paddingBottom: 0,
     paddingRight: 0,
+  },
+  infoRowWrapper: {
+    width: 200,
+    paddingRight: 50,
+  },
+  infoContainer: {},
+  infoTitle: {
+    fontSize: 17,
+    color: '#000',
+    fontWeight: 'bold',
+    marginBottom: 11,
+  },
+  infoRowTitle: {
+    fontSize: 14,
+    color: '#A0A0A0',
+  },
+  infoRowValue: {
+    fontSize: 14,
+    color: '#000',
+  },
+  infoRow: {
+    flexDirection: 'row',
+    marginBottom: 10,
   },
   labels: {
     flexDirection: 'row',
