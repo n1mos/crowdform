@@ -44,7 +44,7 @@ const FundsItem = ({title, onPress, icon}) => {
             backgroundGradientFromOpacity: 0,
             backgroundGradientToOpacity: 0,
             decimalPlaces: 2, // optional, defaults to 2dp
-            color: () => '#57ff57',
+            color: () => '#0FDF8F',
             style: {
               borderRadius: 16,
             },

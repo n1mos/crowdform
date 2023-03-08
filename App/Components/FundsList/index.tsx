@@ -2,6 +2,7 @@ import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 import FundsItem from '../FundsItem';
+import { WindMock, SolarMock, NatureMock } from './mock';
 
 const icons = {
   solar: require('../../Assets/solar.png'),
@@ -12,8 +13,8 @@ const icons = {
 const FundsList = () => {
   const navigation = useNavigation();
 
-  const onFundItemPress = () => {
-    navigation.navigate('Fund');
+  const onFundItemPress = (params) => {
+    navigation.navigate('Fund', params);
   };
 
   return (
@@ -21,17 +22,17 @@ const FundsList = () => {
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <FundsItem
           title="Wind Fund"
-          onPress={onFundItemPress}
+          onPress={() => onFundItemPress(WindMock)}
           icon={icons.wind}
         />
         <FundsItem
           title="Solar Fund"
-          onPress={onFundItemPress}
+          onPress={() => onFundItemPress(SolarMock)}
           icon={icons.solar}
         />
         <FundsItem
           title="Nature Fund"
-          onPress={onFundItemPress}
+          onPress={() => onFundItemPress(NatureMock)}
           icon={icons.nature}
         />
       </ScrollView>

@@ -1,8 +1,8 @@
 import {configureStore} from '@reduxjs/toolkit';
-import loginReducer from './Reducers/loginReducer';
+import fundReducer from './Reducers/fundReducer';
 
 export const store = configureStore({
   reducer: {
-    login: loginReducer,
+    fund: fundReducer,
   },
 });
