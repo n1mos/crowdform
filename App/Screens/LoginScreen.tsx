@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   buttonText: {
-    color: '#808080',
+    color: '#A0A0A0',
     textAlign: 'center',
     fontWeight: 'normal',
   },

@@ -23,14 +23,6 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     width: '100%',
   },
-  buttonText: {
-    color: '#000',
-    textAlign: 'center',
-    fontWeight: 'normal',
-  },
-  underline: {
-    textDecorationLine: 'underline',
-  },
 });
 
 export default Button;

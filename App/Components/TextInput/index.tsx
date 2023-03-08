@@ -26,7 +26,7 @@ const TextInput = ({
         value={value}
         onChangeText={onChangeText}
         placeholder={placeholder}
-        placeholderTextColor="#777"
+        placeholderTextColor="#CFCFCF"
         inputMode={inputMode}
         secureTextEntry={secureTextEntry}
       />
@@ -40,15 +40,15 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   label: {
-    color: '#555',
+    color: '#A0A0A0',
     fontSize: 12,
     fontWeight: 'bold',
     marginBottom: 5,
   },
   input: {
     borderWidth: 1,
-    borderColor: '#e1e1e1',
-    backgroundColor: '#e1e1e1',
+    borderColor: '#F4F4F4',
+    backgroundColor: '#F4F4F4',
     paddingVertical: 15,
     paddingHorizontal: 10,
     fontSize: 16,
