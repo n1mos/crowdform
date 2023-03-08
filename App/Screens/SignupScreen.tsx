@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
   },
   checkboxText: {
-    color: '#808080',
+    color: '#A0A0A0',
     marginTop: -25,
     marginLeft: 35,
   },
